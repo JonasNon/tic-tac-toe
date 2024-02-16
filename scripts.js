@@ -7,6 +7,7 @@ let currentMarker = 'X'
 const squares = document.getElementsByTagName("td")
 let boxElements = []
 let winChecker
+let checkSpot
 // const tdElements = element.getElementsByTagName('td')
 
 
@@ -49,9 +50,11 @@ const winCheck = () => {
     for (j=0; j < 3; j++) {
       // console.log(winConditions[i][j])
       //squares is currently not a proper array for it is undefined
-      let checkSpot = winConditions[i]
-      let checkSpotDeep = checkSpot[j]
-      console.log(squares[checkSpotDeep].innerHTML)
+      
+      checkSpot = winConditions[i][j]
+      console.log('checkspot ',i,j,checkSpot)
+      // let checkSpotDeep = checkSpot[j]
+      console.log(squares[checkSpot].innerHTML)
       if (squares[checkSpotDeep].innerHTML !== null) {
         //access the x/o part of the element value here and it all works
         if (squares[checkSpotDeep].innerHTML == "X")  {
